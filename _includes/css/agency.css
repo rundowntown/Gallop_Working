@@ -273,9 +273,10 @@ header {
     color: #fff;
     min-height: 100vh; /* Full viewport height */
     display: flex;
-    align-items: center; /* Vertically center content */
+    flex-direction: column;
     justify-content: center;
-    overflow: hidden; /* Ensure content doesn't spill out */
+    align-items: center; /* Center content horizontally */
+    overflow: hidden;
 }
 
 header .video-bg {
@@ -295,22 +296,20 @@ header .video-bg {
 header .intro-text {
     position: relative;
     z-index: 1; /* Ensure text is above video */
-    padding: 20px;
     text-align: center;
+    padding: 20px;
 }
 
-header .intro-text .intro-bg-box {
+header .intro-bg-box {
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-    display: inline-block; /* Shrinks the box to fit content */
-    padding: 15px 30px; /* Adjust padding for tighter fit */
-    border-radius: 8px; /* Optional: Rounded corners */
-    margin-bottom: 20px; /* Space between box and button */
-    
-    /* Optional: Gradient Background */
-    /* background: linear-gradient(
-        rgba(0, 0, 0, 0.7),
-        rgba(0, 0, 0, 0.5)
-    ); */
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 8px;
+    margin-bottom: 20px; /* Space between text and button */
+}
+
+header .intro-text .btn-xl {
+    margin-top: 20px; /* Space between text box and button */
 }
 
 header .intro-text .intro-lead-in {
