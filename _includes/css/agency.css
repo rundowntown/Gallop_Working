@@ -266,94 +266,111 @@ fieldset[disabled] .btn-xl.active {
 }
 
 
-/* Header Styling */
+/* Main Header Styles */
+/* Main Header Styles */
 header {
     position: relative;
-    height: 100vh; /* Full viewport height */
-    width: 100%;
+    text-align: center;
+    color: #fff;
+    min-height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center content horizontally */
     overflow: hidden;
-    color: #fff; /* Default text color */
-    display: flex; /* Use flexbox for easy centering */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
 }
 
-/* Video Background Styling */
-#bg-video {
+header .video-bg {
     position: absolute;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
     min-width: 100%;
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -1; /* Places the video behind other elements */
-    transform: translate(-50%, -50%); /* Centers the video */
-    object-fit: cover; /* Ensures the video covers the container */
+    z-index: -1; /* Send video behind content */
+    background-size: cover;
+    filter: brightness(0.7); /* Optional: Adjust brightness for better readability */
 }
 
-/* Overlay Styling */
-header .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-    z-index: 0; /* Places the overlay above the video but below the text */
-}
-
-/* Intro Text Styling */
 header .intro-text {
     position: relative;
-    z-index: 1; /* Ensures text is above the overlay */
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
-    padding: 30px 15px;
-    border-radius: 10px;
-    text-align: center; /* Center the text inside the box */
+    z-index: 1; /* Ensure text is above video */
+    text-align: center;
+    max-width: 80%; /* Constrain width on larger screens */
+    margin: 0 auto; /* Center the content */
+    display: flex;
+    flex-direction: column; /* Ensure children stack vertically */
+    align-items: center; /* Align children horizontally */
+}
+
+header .intro-bg-box {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    padding: 15px 30px;
+    border-radius: 8px;
+    margin-bottom: 20px; /* Space between text and button */
+}
+
+header .intro-text .btn-xl {
+    margin-top: 20px; /* Space between text box and button */
+    text-align: center;
 }
 
 header .intro-text .intro-lead-in {
-    font-size: 24px;
+    color: #fff; /* Ensures text is readable against background */
+    margin: 0; /* Removes default margin */
+    font-family: {{ site.data.template.font.secondary }};
+    font-size: 22px;
     font-style: italic;
-    line-height: 1.5;
-    margin-bottom: 15px;
-    color: #fff; /* White text */
+    line-height: 1.5; /* Improves readability */
+    
+    /* Optional: Text Shadow for enhanced readability */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 header .intro-text .intro-heading {
-    font-size: 48px;
-    font-weight: bold;
-    line-height: 1.2;
-    color: #fff;
+    color: #fff; /* Ensures text is readable against background */
+    margin: 10px 0; /* Adds vertical spacing */
     text-transform: uppercase;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    margin-bottom: 20px;
-}
-
-header .intro-text a.btn {
-    margin-top: 15px;
-    padding: 10px 20px;
-    color: #fff; /* White button text */
-    background-color: #007bff; /* Default button color */
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Responsive Styling */
-@media (min-width: 768px) {
-    header .intro-text {
-        padding: 50px 30px;
-    }
+    font-family: {{ site.data.template.font.primary }};
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.2; /* Improves readability */
     
+    /* Optional: Text Shadow for enhanced readability */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Button Styles */
+header .intro-text .btn-xl {
+    margin-top: 20px; /* Adds space between text box and button */
+    /* Button retains its existing styles */
+}
+
+/* Responsive Adjustments */
+@media(min-width:768px) {
+    header .intro-text {
+        padding-top: 150px; /* Increased from 50px */
+        padding-bottom: 150px; /* Increased from 100px */
+    }
+
+    header .intro-text .intro-bg-box {
+        padding: 20px 40px; /* Increased padding for larger screens */
+    }
+
     header .intro-text .intro-lead-in {
-        font-size: 36px;
+        font-size: 40px; /* Larger text for better visibility */
     }
 
     header .intro-text .intro-heading {
-        font-size: 64px;
+        font-size: 75px; /* Larger text for better visibility */
+        margin: 15px 0; /* Adjusted spacing */
+    }
+
+    /* Adjust button margin on larger screens */
+    header .intro-text .btn-xl {
+        margin-top: 30px; /* Increased spacing */
     }
 }
 
@@ -897,4 +914,4 @@ img::-moz-selection {
 
 body {
     webkit-tap-highlight-color: #{{ site.data.template.color.primary }};
-} 
+}
