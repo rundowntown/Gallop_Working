@@ -40,17 +40,26 @@
         <!-- /.container-fluid -->
     </nav>
 
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="intro-text">
+<!-- Header -->
+<header>
+    <!-- Video Background -->
+    <video autoplay muted loop id="header-video">
+        <source src="{{ site.baseurl }}/assets/Gallop_3.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <div class="container">
+        <div class="intro-text">
+            <!-- New Wrapper for Background Box -->
+            <div class="intro-bg-box">
                 <div class="intro-lead-in">Welcome To Our Studio!</div>
                 <div class="intro-heading">It's Nice To Meet You</div>
-                <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>
             </div>
+            <!-- Button Outside the Background Box -->
+            <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>
         </div>
-    </header>
-<!--
+    </div>
+</header>
         {% for page in site.pages %}
           {% if page.title %}<a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>{% endif %}
         {% endfor %}
