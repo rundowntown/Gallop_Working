@@ -272,7 +272,7 @@ header {
     background-attachment: scroll;
     background-image: url('{{ site.baseurl }}/img/header-bg.jpg');
     background-position: center center;
-    background-repeat: none;
+    background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -282,10 +282,16 @@ header {
 header .intro-text {
     padding-top: 100px;
     padding-bottom: 50px;
+    
+    /* New Styles for Transparent Background Box */
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust color and opacity as needed */
+    display: inline-block; /* Shrinks the container to fit content */
+    padding: 20px 40px; /* Adjust padding for tighter or looser fit */
+    border-radius: 8px; /* Optional: Rounded corners */
 }
 
 header .intro-text .intro-lead-in {
-    color: #333333; /* Replace with your desired color */
+    color: #fff; /* Changed from #333333 for better contrast */
     margin-bottom: 25px;
     font-family: {{ site.data.template.font.secondary }};
     font-size: 22px;
@@ -294,7 +300,7 @@ header .intro-text .intro-lead-in {
 }
 
 header .intro-text .intro-heading {
-    color: #333333; /* Replace with your desired color */
+    color: #fff; /* Changed from #333333 for better contrast */
     margin-bottom: 25px;
     text-transform: uppercase;
     font-family: {{ site.data.template.font.primary }};
