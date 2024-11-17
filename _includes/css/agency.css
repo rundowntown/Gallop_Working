@@ -267,6 +267,7 @@ fieldset[disabled] .btn-xl.active {
 
 
 /* Main Header Styles */
+/* Base header styles */
 header {
     position: relative;
     text-align: center;
@@ -277,9 +278,10 @@ header {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background-color: black; /* Fallback background for when video doesn't load */
+    background-color: black; /* Fallback background for when the video is not supported */
 }
 
+/* Video background styling */
 header .video-bg {
     position: absolute;
     top: 50%;
@@ -291,18 +293,38 @@ header .video-bg {
     height: auto;
     z-index: -1;
     background-size: cover;
-    background-color: black; /* Ensure a visible background */
+    background-color: black; /* Ensures visibility in all modes */
+    display: block; /* Ensure video is displayed */
 }
 
+/* Text and content */
 header .intro-text {
     position: relative;
-    z-index: 1; /* Ensure text is above video */
+    z-index: 1;
     text-align: center;
-    max-width: 80%; /* Constrain width on larger screens */
-    margin: 0 auto; /* Center the content */
+    max-width: 80%;
+    margin: 0 auto;
     display: flex;
-    flex-direction: column; /* Ensure children stack vertically */
-    align-items: center; /* Align children horizontally */
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Fallback image (hidden by default, shown only if video doesn't load) */
+header .video-bg + img {
+    display: none; /* Hide the fallback image unless video fails */
+}
+
+/* Dark mode-specific adjustments */
+@media (prefers-color-scheme: dark) {
+    header {
+        background-color: black; /* Ensure a consistent background color in dark mode */
+    }
+    header .video-bg {
+        background-color: black; /* Video container remains visible */
+    }
+    header .video-bg + img {
+        display: none; /* Prevent fallback from overriding video in dark mode */
+    }
 }
 
 header .intro-bg-box {
