@@ -298,15 +298,12 @@ header .intro-text {
     position: relative;
     z-index: 1; /* Ensure text is above video */
     text-align: center;
-    max-width: 80%; /* Constrain width on larger screens */
-    margin: 0 auto; /* Center the content */
-    display: flex;
-    flex-direction: column; /* Ensure children stack vertically */
-    align-items: center; /* Align children horizontally */
+    padding: 20px;
 }
 
 header .intro-bg-box {
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    display: inline-block;
     padding: 15px 30px;
     border-radius: 8px;
     margin-bottom: 20px; /* Space between text and button */
@@ -314,7 +311,6 @@ header .intro-bg-box {
 
 header .intro-text .btn-xl {
     margin-top: 20px; /* Space between text box and button */
-    text-align: center;
 }
 
 header .intro-text .intro-lead-in {
@@ -371,31 +367,6 @@ header .intro-text .btn-xl {
     /* Adjust button margin on larger screens */
     header .intro-text .btn-xl {
         margin-top: 30px; /* Increased spacing */
-    }
-}
-
-section {
-    padding: 100px 0;
-}
-
-section h2.section-heading {
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 40px;
-}
-
-section h3.section-subheading {
-    margin-bottom: 75px;
-    text-transform: none;
-    font-family: {{ site.data.template.font.secondary }};
-    font-size: 16px;
-    font-style: italic;
-    font-weight: 400;
-}
-
-@media(min-width:768px) {
-    section {
-        padding: 150px 0;
     }
 }
 
