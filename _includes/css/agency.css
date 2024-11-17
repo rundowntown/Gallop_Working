@@ -266,16 +266,38 @@ fieldset[disabled] .btn-xl.active {
 }
 
 header {
+    position: relative; /* Enables pseudo-element positioning */
     text-align: center;
     color: #fff;
     background-attachment: scroll;
     background-image: url('{{ site.baseurl }}/img/header-bg.jpg');
     background-position: center center;
-    background-repeat: none;
+    background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+}
+
+/* Add an overlay to the header */
+header::before {
+    content: ''; /* Required for pseudo-elements */
+    position: absolute; /* Overlay spans the header */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    z-index: 1; /* Ensures overlay is behind text */
+}
+
+/* Ensure text appears above the overlay */
+header .intro-text {
+    position: relative;
+    z-index: 2; /* Ensures text is above the overlay */
+    color: #FFD700; /* Example: Gold text color */
+    text-align: center;
+    padding: 20px; /* Optional padding */
 }
 
 header .intro-text {
