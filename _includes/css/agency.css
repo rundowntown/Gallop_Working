@@ -267,112 +267,125 @@ fieldset[disabled] .btn-xl.active {
 
 
 /* Main Header Styles */
-/* Main Header Styles */
 header {
+    background-image: url('{{ site.baseurl }}/img/header-bg.jpg'); /* Fallback */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     position: relative;
-    text-align: center;
-    color: #fff;
-    min-height: 100vh; /* Full viewport height */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; /* Center content horizontally */
+    width: 100%;
+    height: 100vh; /* Full viewport height */
     overflow: hidden;
 }
 
-header .video-bg {
+/* Video Background Styles */
+#header-video {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     min-width: 100%;
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -1; /* Send video behind content */
+    z-index: -1;
+    transform: translate(-50%, -50%);
     background-size: cover;
-    filter: brightness(0.7); /* Optional: Adjust brightness for better readability */
+    transition: 1s opacity;
 }
 
-header .intro-text {
+/* Overlay for better text contrast */
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Adjust opacity as needed */
+    z-index: 0;
+}
+
+/* Ensure the container is above the video and overlay */
+header .container {
     position: relative;
-    z-index: 1; /* Ensure text is above video */
-    text-align: center;
-    max-width: 80%; /* Constrain width on larger screens */
-    margin: 0 auto; /* Center the content */
-    display: flex;
-    flex-direction: column; /* Ensure children stack vertically */
-    align-items: center; /* Align children horizontally */
-    padding-top: 100px; /* Added padding */
-    padding-bottom: 100px; /* Added padding */
+    z-index: 1;
 }
 
-header .intro-bg-box {
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+/* Intro Text Styles */
+header .intro-text {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+header .intro-text .intro-bg-box {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: inline-block;
     padding: 15px 30px;
     border-radius: 8px;
-    margin-bottom: 20px; /* Space between text and button */
+    margin-bottom: 20px;
 }
 
-header .intro-text .btn-xl {
-    margin-top: 20px; /* Space between text box and button */
-    text-align: center;
+header .intro-text .intro-lead-in,
+header .intro-text .intro-heading {
+    color: #fff;
 }
 
 header .intro-text .intro-lead-in {
-    color: #fff; /* Ensures text is readable against background */
-    margin: 0; /* Removes default margin */
+    margin: 0;
     font-family: {{ site.data.template.font.secondary }};
     font-size: 22px;
     font-style: italic;
-    line-height: 1.5; /* Improves readability */
-    
-    /* Optional: Text Shadow for enhanced readability */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    line-height: 1.5;
 }
 
 header .intro-text .intro-heading {
-    color: #fff; /* Ensures text is readable against background */
-    margin: 10px 0; /* Adds vertical spacing */
+    margin: 10px 0;
     text-transform: uppercase;
     font-family: {{ site.data.template.font.primary }};
     font-size: 50px;
     font-weight: 700;
-    line-height: 1.2; /* Improves readability */
-    
-    /* Optional: Text Shadow for enhanced readability */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    line-height: 1.2;
 }
 
 /* Button Styles */
 header .intro-text .btn-xl {
-    margin-top: 20px; /* Adds space between text box and button */
-    /* Button retains its existing styles */
+    margin-top: 20px;
 }
 
 /* Responsive Adjustments */
 @media(min-width:768px) {
+    header {
+        height: 100vh;
+    }
+
     header .intro-text {
-        padding-top: 150px; /* Increased from 50px */
-        padding-bottom: 150px; /* Increased from 100px */
+        padding-top: 150px;
+        padding-bottom: 150px;
     }
 
     header .intro-text .intro-bg-box {
-        padding: 20px 40px; /* Increased padding for larger screens */
+        padding: 20px 40px;
     }
 
     header .intro-text .intro-lead-in {
-        font-size: 40px; /* Larger text for better visibility */
+        font-size: 40px;
+        line-height: 1.5;
     }
 
     header .intro-text .intro-heading {
-        font-size: 75px; /* Larger text for better visibility */
-        margin: 15px 0; /* Adjusted spacing */
+        font-size: 75px;
+        margin: 15px 0;
+        line-height: 1.2;
     }
 
-    /* Adjust button margin on larger screens */
     header .intro-text .btn-xl {
-        margin-top: 30px; /* Increased spacing */
+        margin-top: 30px;
     }
 }
 
