@@ -1,20 +1,24 @@
 <!-- Services Section -->
 <section id="services">
     <div class="container">
+        <!-- Container for the Watercolor Map -->
         <div id="watercolor-map" style="width: 100%; height: 600px; margin: 20px 0;"></div>
 
+        <!-- Observable Runtime Script -->
         <script type="module">
-            // Import the Observable Runtime and Inspector as ES modules
+            // Import Runtime and Inspector from Observable's CDN
             import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+            
             // Import the specific version of your Observable notebook
             import define from "https://api.observablehq.com/@veltman/watercolor@551.js?v=3";
 
-            // Initialize the runtime
+            // Initialize the Observable Runtime
             const runtime = new Runtime();
+
             // Create a module instance from the imported notebook
             const main = runtime.module(define, name => {
-                // Check if the cell name matches the one that renders the map
-                if (name === "map") { // Replace "map" with "viewof map" if that's the correct cell name
+                // Replace 'map' with the exact cell name if different
+                if (name === "map") { 
                     return Inspector.into("#watercolor-map")();
                 }
             });
