@@ -267,38 +267,16 @@ fieldset[disabled] .btn-xl.active {
 
 /* Main Header Styles */
 header {
-    position: relative; /* Enables pseudo-element positioning */
     text-align: center;
     color: #fff;
     background-attachment: scroll;
     background-image: url('{{ site.baseurl }}/img/header-bg.jpg');
     background-position: center center;
-    background-repeat: no-repeat;
+    background-repeat: none;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-}
-
-/* Add an overlay to the header */
-header::before {
-    content: ''; /* Required for pseudo-elements */
-    position: absolute; /* Overlay spans the header */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
-    z-index: 1; /* Ensures overlay is behind text */
-}
-
-/* Ensure text appears above the overlay */
-header .intro-text {
-    position: relative;
-    z-index: 2; /* Ensures text is above the overlay */
-    color: #FFD700; /* Example: Gold text color */
-    text-align: center;
-    padding: 20px; /* Optional padding */
 }
 
 header .intro-text {
@@ -307,7 +285,7 @@ header .intro-text {
 }
 
 header .intro-text .intro-lead-in {
-    color: #800000; /* Replace with your desired color */
+    color: #333333; /* Replace with your desired color */
     margin-bottom: 25px;
     font-family: {{ site.data.template.font.secondary }};
     font-size: 22px;
@@ -316,7 +294,7 @@ header .intro-text .intro-lead-in {
 }
 
 header .intro-text .intro-heading {
-    color: #B22222; /* Replace with your desired color */
+    color: #333333; /* Replace with your desired color */
     margin-bottom: 25px;
     text-transform: uppercase;
     font-family: {{ site.data.template.font.primary }};
@@ -324,6 +302,12 @@ header .intro-text .intro-heading {
     font-weight: 700;
     line-height: 50px;
 }
+
+@media(min-width:768px) {
+    header .intro-text {
+        padding-top: 300px;
+        padding-bottom: 200px;
+    }
 
     header .intro-text .intro-lead-in {
         margin-bottom: 25px;
