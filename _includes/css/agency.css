@@ -268,7 +268,7 @@ fieldset[disabled] .btn-xl.active {
 /* Main Header Styles */
 header {
     position: relative; /* Allows pseudo-elements like overlays */
-    text-align: center; /* Centers the content */
+    text-align: center; /* Centers content horizontally */
     color: #fff;
     background-attachment: scroll;
     background-image: url('{{ site.baseurl }}/img/header-bg.jpg');
@@ -278,7 +278,7 @@ header {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    padding: 20px 0; /* Adjusts overall height of the header */
+    padding: 50px 0; /* Adjusts the overall height of the header */
 }
 
 /* Overlay Styles */
@@ -293,7 +293,7 @@ header::before {
     z-index: 1; /* Keeps overlay below text */
 }
 
-/* Text Box (Centered and Sized for Content) */
+/* Text Box (Centered and Adaptive) */
 header .intro-text {
     position: relative; /* Keeps text above overlay */
     z-index: 2; /* Ensures text is above all other elements */
@@ -303,8 +303,9 @@ header .intro-text {
     border-radius: 10px; /* Optional rounded corners */
     color: #FFD700; /* Gold text color */
     margin: 0 auto; /* Centers the box horizontally */
-    max-width: 80%; /* Restricts width for larger screens */
-    box-sizing: border-box; /* Prevents width from being affected by padding */
+    width: auto; /* Let the content dictate the width */
+    max-width: 80%; /* Restricts box width for small screens */
+    box-sizing: border-box; /* Prevents padding from affecting size */
 }
 
 /* Text Inside the Box */
@@ -312,7 +313,7 @@ header .intro-text .intro-lead-in {
     color: #0015BC; /* Democratic Blue */
     margin-bottom: 10px; /* Small spacing below lead-in */
     font-family: {{ site.data.template.font.secondary }};
-    font-size: 22px;
+    font-size: 1.5rem; /* Responsive font size */
     font-style: italic;
     line-height: 1.4; /* Slightly relaxed line height */
 }
@@ -322,30 +323,39 @@ header .intro-text .intro-heading {
     margin: 0; /* Remove extra margin */
     text-transform: uppercase;
     font-family: {{ site.data.template.font.primary }};
-    font-size: 36px; /* Reduced font size for smaller screens */
+    font-size: 2rem; /* Responsive font size */
     font-weight: 700;
     line-height: 1.2; /* Tighter spacing for heading */
 }
 
-/* Responsive Adjustments for Larger Screens */
+/* Responsive Adjustments for Wider Screens */
 @media (min-width: 768px) {
     header .intro-text {
-        max-width: 50%; /* Constrain width on wider screens */
+        max-width: 60%; /* Allow more width on tablets and desktops */
+        padding: 20px 30px; /* Slightly larger padding */
     }
 
-    header {
-        padding: 50px 0; /* Adjust header padding for larger screens */
+    header .intro-text .intro-lead-in {
+        font-size: 1.8rem; /* Slightly larger font */
+    }
+
+    header .intro-text .intro-heading {
+        font-size: 2.5rem; /* Larger font for better visibility */
     }
 }
 
-/* Responsive Adjustments for Very Wide Screens */
 @media (min-width: 1200px) {
     header .intro-text {
-        max-width: 40%; /* Even narrower for ultra-wide views */
+        max-width: 50%; /* Even wider for large desktops */
+        padding: 25px 40px; /* More breathing room for larger screens */
     }
 
-    header {
-        padding: 100px 0; /* Add more space for larger displays */
+    header .intro-text .intro-lead-in {
+        font-size: 2rem;
+    }
+
+    header .intro-text .intro-heading {
+        font-size: 3rem;
     }
 }
 
