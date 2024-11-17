@@ -268,127 +268,136 @@ fieldset[disabled] .btn-xl.active {
 
 /* Main Header Styles */
 header {
-    background-image: url('{{ site.baseurl }}/img/header-bg.jpg'); /* Fallback */
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
     position: relative;
-    width: 100%;
-    height: 100vh; /* Full viewport height */
+    text-align: center;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
+    background-color: black; /* Fallback background for when video doesn't load */
 }
 
-/* Video Background Styles */
-#header-video {
+header .video-bg {
     position: absolute;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
     min-width: 100%;
     min-height: 100%;
     width: auto;
     height: auto;
     z-index: -1;
-    transform: translate(-50%, -50%);
     background-size: cover;
-    transition: 1s opacity;
+    background-color: black; /* Ensure a visible background */
 }
 
-/* Overlay for better text contrast */
-header::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Adjust opacity as needed */
-    z-index: 0;
-}
-
-/* Ensure the container is above the video and overlay */
-header .container {
-    position: relative;
-    z-index: 1;
-}
-
-/* Intro Text Styles */
 header .intro-text {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    padding-left: 20px;
-    padding-right: 20px;
+    position: relative;
+    z-index: 1; /* Ensure text is above video */
+    text-align: center;
+    max-width: 80%; /* Constrain width on larger screens */
+    margin: 0 auto; /* Center the content */
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #fff;
+    flex-direction: column; /* Ensure children stack vertically */
+    align-items: center; /* Align children horizontally */
 }
 
-header .intro-text .intro-bg-box {
-    background-color: rgba(0, 0, 0, 0.5);
-    display: inline-block;
+header .intro-bg-box {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
     padding: 15px 30px;
     border-radius: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Space between text and button */
 }
 
-header .intro-text .intro-lead-in,
-header .intro-text .intro-heading {
-    color: #fff;
+header .intro-text .btn-xl {
+    margin-top: 20px; /* Space between text box and button */
+    text-align: center;
 }
 
 header .intro-text .intro-lead-in {
-    margin: 0;
+    color: #fff; /* Ensures text is readable against background */
+    margin: 0; /* Removes default margin */
     font-family: {{ site.data.template.font.secondary }};
     font-size: 22px;
     font-style: italic;
-    line-height: 1.5;
+    line-height: 1.5; /* Improves readability */
+    
+    /* Optional: Text Shadow for enhanced readability */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 header .intro-text .intro-heading {
-    margin: 10px 0;
+    color: #fff; /* Ensures text is readable against background */
+    margin: 10px 0; /* Adds vertical spacing */
     text-transform: uppercase;
     font-family: {{ site.data.template.font.primary }};
     font-size: 50px;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.2; /* Improves readability */
+    
+    /* Optional: Text Shadow for enhanced readability */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 /* Button Styles */
 header .intro-text .btn-xl {
-    margin-top: 20px;
+    margin-top: 20px; /* Adds space between text box and button */
+    /* Button retains its existing styles */
 }
 
 /* Responsive Adjustments */
 @media(min-width:768px) {
-    header {
-        height: 100vh;
-    }
-
     header .intro-text {
-        padding-top: 150px;
-        padding-bottom: 150px;
+        padding-top: 150px; /* Increased from 50px */
+        padding-bottom: 150px; /* Increased from 100px */
     }
 
     header .intro-text .intro-bg-box {
-        padding: 20px 40px;
+        padding: 20px 40px; /* Increased padding for larger screens */
     }
 
     header .intro-text .intro-lead-in {
-        font-size: 40px;
-        line-height: 1.5;
+        font-size: 40px; /* Larger text for better visibility */
     }
 
     header .intro-text .intro-heading {
-        font-size: 75px;
-        margin: 15px 0;
-        line-height: 1.2;
+        font-size: 75px; /* Larger text for better visibility */
+        margin: 15px 0; /* Adjusted spacing */
     }
 
+    /* Adjust button margin on larger screens */
     header .intro-text .btn-xl {
-        margin-top: 30px;
+        margin-top: 30px; /* Increased spacing */
     }
 }
 
+section {
+    padding: 100px 0;
+}
+
+section h2.section-heading {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 40px;
+}
+
+section h3.section-subheading {
+    margin-bottom: 75px;
+    text-transform: none;
+    font-family: {{ site.data.template.font.secondary }};
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 400;
+}
+
+@media(min-width:768px) {
+    section {
+        padding: 150px 0;
+    }
+}
 
 .service-heading {
     margin: 15px 0;
@@ -905,4 +914,4 @@ img::-moz-selection {
 
 body {
     webkit-tap-highlight-color: #{{ site.data.template.color.primary }};
-}
+} 
