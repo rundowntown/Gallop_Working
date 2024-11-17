@@ -265,6 +265,7 @@ fieldset[disabled] .btn-xl.active {
     }
 }
 
+
 /* Main Header Styles */
 header {
     text-align: center;
@@ -280,56 +281,56 @@ header {
 }
 
 header .intro-text {
-    padding-top: 100px;
+    /* Adjusted vertical padding */
+    padding-top: 50px;
     padding-bottom: 50px;
     
-    /* New Styles for Transparent Background Box */
-    background-color: rgba(0, 0, 0, 0.5); /* Adjust color and opacity as needed */
-    display: inline-block; /* Shrinks the container to fit content */
-    padding: 20px 40px; /* Adjust padding for tighter or looser fit */
+    /* Optional horizontal padding for smaller screens */
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+header .intro-text .intro-bg-box {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: inline-block; /* Tight horizontal fit */
+    padding: 15px 30px; /* Tight vertical and horizontal padding */
     border-radius: 8px; /* Optional: Rounded corners */
 }
 
 header .intro-text .intro-lead-in {
-    color: #fff; /* Changed from #333333 for better contrast */
-    margin-bottom: 25px;
+    color: #fff;
+    margin-bottom: 15px;
     font-family: {{ site.data.template.font.secondary }};
     font-size: 22px;
     font-style: italic;
-    line-height: 22px;
+    line-height: 1.5;
 }
 
 header .intro-text .intro-heading {
-    color: #fff; /* Changed from #333333 for better contrast */
-    margin-bottom: 25px;
+    color: #fff;
+    margin-bottom: 15px;
     text-transform: uppercase;
     font-family: {{ site.data.template.font.primary }};
     font-size: 50px;
     font-weight: 700;
-    line-height: 50px;
+    line-height: 1.2;
 }
 
+/* Responsive Adjustments */
 @media(min-width:768px) {
     header .intro-text {
-        padding-top: 300px;
-        padding-bottom: 200px;
+        padding-top: 150px;
+        padding-bottom: 150px;
     }
 
     header .intro-text .intro-lead-in {
-        margin-bottom: 25px;
-        font-family: {{ site.data.template.font.secondary }};
         font-size: 40px;
-        font-style: italic;
-        line-height: 40px;
+        margin-bottom: 20px;
     }
 
     header .intro-text .intro-heading {
-        margin-bottom: 50px;
-        text-transform: uppercase;
-        font-family: {{ site.data.template.font.primary }};
         font-size: 75px;
-        font-weight: 700;
-        line-height: 75px;
+        margin-bottom: 25px;
     }
 }
 
