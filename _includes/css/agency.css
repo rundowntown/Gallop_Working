@@ -267,8 +267,8 @@ fieldset[disabled] .btn-xl.active {
 
 /* Main Header Styles */
 header {
-    position: relative; /* Allows pseudo-elements like overlays */
-    text-align: center; /* Centers content horizontally */
+    position: relative; /* Enables pseudo-element positioning */
+    text-align: center;
     color: #fff;
     background-attachment: scroll;
     background-image: url('{{ site.baseurl }}/img/header-bg.jpg');
@@ -278,85 +278,51 @@ header {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    padding: 50px 0; /* Adjusts the overall height of the header */
 }
 
-/* Overlay Styles */
+/* Add an overlay to the header */
 header::before {
-    content: '';
-    position: absolute; /* Fills the header container */
+    content: ''; /* Required for pseudo-elements */
+    position: absolute; /* Overlay spans the header */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.1); /* Light semi-transparent overlay */
-    z-index: 1; /* Keeps overlay below text */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    z-index: 1; /* Ensures overlay is behind text */
 }
 
-/* Text Box (Centered and Adaptive) */
+/* Ensure text appears above the overlay */
 header .intro-text {
-    position: relative; /* Keeps text above overlay */
-    z-index: 2; /* Ensures text is above all other elements */
-    display: inline-block; /* Shrinks box to text size */
-    padding: 15px 20px; /* Spacing inside the box */
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
-    border-radius: 10px; /* Optional rounded corners */
-    color: #FFD700; /* Gold text color */
-    margin: 0 auto; /* Centers the box horizontally */
-    width: auto; /* Let the content dictate the width */
-    max-width: 80%; /* Restricts box width for small screens */
-    box-sizing: border-box; /* Prevents padding from affecting size */
+    position: relative;
+    z-index: 2; /* Ensures text is above the overlay */
+    color: #FFD700; /* Example: Gold text color */
+    text-align: center;
+    padding: 20px; /* Optional padding */
 }
 
-/* Text Inside the Box */
+header .intro-text {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
 header .intro-text .intro-lead-in {
-    color: #0015BC; /* Democratic Blue */
-    margin-bottom: 10px; /* Small spacing below lead-in */
+    color: #800000; /* Replace with your desired color */
+    margin-bottom: 25px;
     font-family: {{ site.data.template.font.secondary }};
-    font-size: 1.5rem; /* Responsive font size */
+    font-size: 22px;
     font-style: italic;
-    line-height: 1.4; /* Slightly relaxed line height */
+    line-height: 22px;
 }
 
 header .intro-text .intro-heading {
-    color: #FFD700; /* Gold text for contrast */
-    margin: 0; /* Remove extra margin */
+    color: #B22222; /* Replace with your desired color */
+    margin-bottom: 25px;
     text-transform: uppercase;
     font-family: {{ site.data.template.font.primary }};
-    font-size: 2rem; /* Responsive font size */
+    font-size: 50px;
     font-weight: 700;
-    line-height: 1.2; /* Tighter spacing for heading */
-}
-
-/* Responsive Adjustments for Wider Screens */
-@media (min-width: 768px) {
-    header .intro-text {
-        max-width: 60%; /* Allow more width on tablets and desktops */
-        padding: 20px 30px; /* Slightly larger padding */
-    }
-
-    header .intro-text .intro-lead-in {
-        font-size: 1.8rem; /* Slightly larger font */
-    }
-
-    header .intro-text .intro-heading {
-        font-size: 2.5rem; /* Larger font for better visibility */
-    }
-}
-
-@media (min-width: 1200px) {
-    header .intro-text {
-        max-width: 50%; /* Even wider for large desktops */
-        padding: 25px 40px; /* More breathing room for larger screens */
-    }
-
-    header .intro-text .intro-lead-in {
-        font-size: 2rem;
-    }
-
-    header .intro-text .intro-heading {
-        font-size: 3rem;
-    }
+    line-height: 50px;
 }
 
     header .intro-text .intro-lead-in {
