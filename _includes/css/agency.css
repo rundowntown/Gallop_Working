@@ -267,57 +267,60 @@ fieldset[disabled] .btn-xl.active {
 
 
 /* Main Header Styles */
-/* Base header styles */
-/* Base header styles */
 header {
     position: relative;
     text-align: center;
     color: #fff;
-    min-height: 100vh;
+    min-height: 100vh; /* Full viewport height */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; /* Center content horizontally */
     overflow: hidden;
-    background-color: black; /* Fallback background */
+    background-color: black; /* Default background color for fallback */
 }
 
-/* Video container and fallback image */
-.video-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
-}
-
-.video-container video,
-.video-container img {
+header .video-bg {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    background-color: black; /* Ensures visibility */
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Send video behind content */
+    background-size: cover;
+    filter: brightness(0.7); /* Optional: Adjust brightness for better readability */
 }
 
-/* Ensure fallback image is only shown if video fails */
-.video-container img {
-    display: none; /* Hide the fallback image by default */
+header .intro-text {
+    position: relative;
+    z-index: 1; /* Ensure text is above video */
+    text-align: center;
+    max-width: 80%; /* Constrain width on larger screens */
+    margin: 0 auto; /* Center the content */
+    display: flex;
+    flex-direction: column; /* Ensure children stack vertically */
+    align-items: center; /* Align children horizontally */
+}
+
+header .intro-bg-box {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    padding: 15px 30px;
+    border-radius: 8px;
+    margin-bottom: 20px; /* Space between text and button */
+}
+
+header .intro-text .btn-xl {
+    margin-top: 20px; /* Space between text box and button */
+    text-align: center;
 }
 
 /* Dark mode-specific adjustments */
 @media (prefers-color-scheme: dark) {
     header {
-        background-color: black; /* Ensure dark mode consistency */
-    }
-    .video-container {
-        background-color: black; /* Video container retains visibility */
+        background-color: black;
     }
 }
 
