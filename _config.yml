@@ -2,7 +2,7 @@ url: https://rundowntown.github.io
 baseurl: /Gallop
 
 ######## Site settings ########
-title: Gallop_4
+title: Gallop
 email: contact@gallopstartup.com
 description: "Gallop is an innovative startup building analytics and visualization tools to bridge policy and public sentiment."
 
@@ -13,54 +13,54 @@ people:
   position: Co-Founder & Data Architect
   social:
     - title: twitter
-      url: https://twitter.com/danielforcade
+      url: 
     - title: github
-      url: https://github.com/danielforcade
+      url: https://github.com/rundowntown
 
 - name: Steven Wasserman
   pic: steven
   position: Co-Founder & Technical Lead
   social:
     - title: linkedin
-      url: https://www.linkedin.com/in/stevenwasserman
+      url: 
     - title: github
-      url: https://github.com/stevenwasserman
+      url: 
 
 - name: Ryan Hopkins
   pic: ryan
-  position: Machine Learning Engineer
+  position: Co-Founder & Machine Learning Engineer
   social:
     - title: github
-      url: https://github.com/ryanhopkins
+      url: 
     - title: twitter
-      url: https://twitter.com/ryanhopkins
+      url: 
 
 - name: Hanna Bodnar
   pic: hanna
-  position: Front-End Developer
+  position: Co-Founder & Front-End Developer
   social:
     - title: linkedin
-      url: https://www.linkedin.com/in/hannabodnar
+      url: 
     - title: instagram
-      url: https://www.instagram.com/hannabodnar
+      url: 
 
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
 social:
   - title: twitter
-    url: http://twitter.com/jekyllrb
+    url: 
   - title: facebook
     url:
   - title: stack-overflow
-    url: http://stackoverflow.com/questions/tagged/jekyll
+    url: 
   - title: bitbucket 
-    url: http://bitbucket.org/jekyll
+    url: 
   - title: github
-    url: http://github.com/jekyll
+    url: https://github.com/The-Policy-Posse
 
 # Postal address (add as many lines as necessary)
 address:
-  - line: 3481 Melrose Place
-  - line: Beverly Hills, CA 90210
+  - line: 
+  - line: 
 
 # Build settings
 markdown: kramdown
