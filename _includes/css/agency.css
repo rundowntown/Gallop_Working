@@ -284,6 +284,7 @@ header .intro-text {
 }
 
 header .intro-text .intro-lead-in {
+    color: #FFD700; /* Replace with your desired color */
     margin-bottom: 25px;
     font-family: {{ site.data.template.font.secondary }};
     font-size: 22px;
@@ -292,6 +293,7 @@ header .intro-text .intro-lead-in {
 }
 
 header .intro-text .intro-heading {
+    color: #FFD700; /* Replace with your desired color */
     margin-bottom: 25px;
     text-transform: uppercase;
     font-family: {{ site.data.template.font.primary }};
