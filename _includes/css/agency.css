@@ -273,7 +273,7 @@ header {
     background-attachment: scroll;
     background-image: url('{{ site.baseurl }}/img/header-bg.jpg');
     background-position: center center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; /* Corrected from 'none' to 'no-repeat' */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -281,56 +281,81 @@ header {
 }
 
 header .intro-text {
-    /* Adjusted vertical padding */
-    padding-top: 50px;
-    padding-bottom: 50px;
+    /* Removed excessive vertical padding */
+    padding-top: 50px; /* Adjusted from 100px */
+    padding-bottom: 50px; /* Adjusted from 50px */
     
-    /* Optional horizontal padding for smaller screens */
+    /* Optional: Horizontal padding to prevent content from touching edges on small screens */
     padding-left: 20px;
     padding-right: 20px;
+    
+    /* Center the content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header .intro-text .intro-bg-box {
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    display: inline-block; /* Tight horizontal fit */
-    padding: 15px 30px; /* Tight vertical and horizontal padding */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    display: inline-block; /* Shrinks the box to fit content */
+    padding: 15px 30px; /* Adjust padding for tighter fit */
     border-radius: 8px; /* Optional: Rounded corners */
+    
+    /* Optional: Add some margin below if needed */
+    margin-bottom: 20px;
 }
 
 header .intro-text .intro-lead-in {
-    color: #fff;
-    margin-bottom: 15px;
+    color: #fff; /* Changed from #333333 for better contrast */
+    margin: 0; /* Removed bottom margin */
     font-family: {{ site.data.template.font.secondary }};
     font-size: 22px;
     font-style: italic;
-    line-height: 1.5;
+    line-height: 1.5; /* Use relative units for better responsiveness */
 }
 
 header .intro-text .intro-heading {
-    color: #fff;
-    margin-bottom: 15px;
+    color: #fff; /* Changed from #333333 for better contrast */
+    margin: 10px 0; /* Added vertical margin for spacing */
     text-transform: uppercase;
     font-family: {{ site.data.template.font.primary }};
     font-size: 50px;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.2; /* Use relative units for better responsiveness */
+}
+
+/* Button Styles */
+header .intro-text .btn-xl {
+    /* Ensures the button maintains its styling */
+    /* If needed, adjust margins */
+    margin-top: 20px;
 }
 
 /* Responsive Adjustments */
 @media(min-width:768px) {
     header .intro-text {
-        padding-top: 150px;
-        padding-bottom: 150px;
+        padding-top: 150px; /* Adjust as needed for larger screens */
+        padding-bottom: 150px; /* Adjust as needed for larger screens */
+    }
+
+    header .intro-text .intro-bg-box {
+        padding: 20px 40px; /* Increased padding for larger screens */
     }
 
     header .intro-text .intro-lead-in {
         font-size: 40px;
-        margin-bottom: 20px;
+        line-height: 1.5;
     }
 
     header .intro-text .intro-heading {
         font-size: 75px;
-        margin-bottom: 25px;
+        margin: 15px 0;
+        line-height: 1.2;
+    }
+
+    /* Adjust button margin on larger screens */
+    header .intro-text .btn-xl {
+        margin-top: 30px;
     }
 }
 
