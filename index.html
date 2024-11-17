@@ -18,17 +18,3 @@ layout: default
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
 </div>
-
-<!-- Map Section -->
-<div id="watercolor-map" style="width: 100%; height: 600px; margin-top: 20px;"></div>
-
-<script src="https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js"></script>
-<script type="module">
-  import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-  import define from "https://api.observablehq.com/@veltman/watercolor.js?v=3";
-
-  const runtime = new Runtime();
-  const main = runtime.module(define, name => {
-    if (name === "viewof map") return Inspector.into("#watercolor-map")();
-  });
-</script>
