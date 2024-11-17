@@ -297,12 +297,15 @@ header .intro-text {
     position: relative;
     z-index: 1; /* Ensure text is above video */
     text-align: center;
-    padding: 20px;
+    max-width: 80%; /* Constrain width on larger screens */
+    margin: 0 auto; /* Center the content */
+    display: flex;
+    flex-direction: column; /* Ensure children stack vertically */
+    align-items: center; /* Align children horizontally */
 }
 
 header .intro-bg-box {
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-    display: inline-block;
     padding: 15px 30px;
     border-radius: 8px;
     margin-bottom: 20px; /* Space between text and button */
@@ -310,6 +313,7 @@ header .intro-bg-box {
 
 header .intro-text .btn-xl {
     margin-top: 20px; /* Space between text box and button */
+    text-align: center;
 }
 
 header .intro-text .intro-lead-in {
