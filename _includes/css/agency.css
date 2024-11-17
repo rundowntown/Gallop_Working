@@ -275,13 +275,11 @@ header {
     min-height: 100vh; /* Full viewport height */
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center content vertically */
+    justify-content: center;
     align-items: center; /* Center content horizontally */
     overflow: hidden;
-    background-color: black; /* Fallback for when video doesn't load */
 }
 
-/* Video Background */
 header .video-bg {
     position: absolute;
     top: 50%;
@@ -291,66 +289,74 @@ header .video-bg {
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -1; /* Ensure video stays behind content */
+    z-index: -1; /* Send video behind content */
     background-size: cover;
-    filter: brightness(0.7); /* Optional: Adjust brightness for readability */
+    filter: brightness(0.7); /* Optional: Adjust brightness for better readability */
 }
 
-/* Overlay Text */
 header .intro-text {
-    position: relative; /* Ensure it stays on top of the video */
-    z-index: 1; /* Keep above video */
+    position: relative;
+    z-index: 1; /* Ensure text is above video */
     text-align: center;
-    max-width: 80%; /* Limit width on larger screens */
-    margin: 0 auto; /* Center horizontally */
+    max-width: 80%; /* Constrain width on larger screens */
+    margin: 0 auto; /* Center the content */
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center text and button horizontally */
+    flex-direction: column; /* Ensure children stack vertically */
+    align-items: center; /* Align children horizontally */
 }
 
-/* Text Background Box */
 header .intro-bg-box {
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
     padding: 15px 30px;
     border-radius: 8px;
-    margin-bottom: 20px; /* Space below text box */
+    margin-bottom: 20px; /* Space between text and button */
 }
 
-/* Headings */
+header .intro-text .btn-xl {
+    margin-top: 20px; /* Space between text box and button */
+    text-align: center;
+}
+
 header .intro-text .intro-lead-in {
-    color: #fff;
+    color: #fff; /* Ensures text is readable against background */
     margin: 0; /* Removes default margin */
+    font-family: {{ site.data.template.font.secondary }};
     font-size: 22px;
     font-style: italic;
     line-height: 1.5; /* Improves readability */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Optional: Better visibility */
+    
+    /* Optional: Text Shadow for enhanced readability */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 header .intro-text .intro-heading {
-    color: #fff;
-    margin: 10px 0; /* Spacing between lines */
+    color: #fff; /* Ensures text is readable against background */
+    margin: 10px 0; /* Adds vertical spacing */
     text-transform: uppercase;
+    font-family: {{ site.data.template.font.primary }};
     font-size: 50px;
     font-weight: 700;
     line-height: 1.2; /* Improves readability */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Optional: Better visibility */
+    
+    /* Optional: Text Shadow for enhanced readability */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-/* Button */
+/* Button Styles */
 header .intro-text .btn-xl {
-    margin-top: 20px; /* Space between text and button */
-    text-align: center;
+    margin-top: 20px; /* Adds space between text box and button */
+    /* Button retains its existing styles */
 }
 
 /* Responsive Adjustments */
-@media (min-width: 768px) {
+@media(min-width:768px) {
     header .intro-text {
-        padding-top: 150px;
-        padding-bottom: 150px;
+        padding-top: 150px; /* Increased from 50px */
+        padding-bottom: 150px; /* Increased from 100px */
     }
 
     header .intro-text .intro-bg-box {
-        padding: 20px 40px; /* Larger padding on bigger screens */
+        padding: 20px 40px; /* Increased padding for larger screens */
     }
 
     header .intro-text .intro-lead-in {
@@ -362,15 +368,9 @@ header .intro-text .btn-xl {
         margin: 15px 0; /* Adjusted spacing */
     }
 
+    /* Adjust button margin on larger screens */
     header .intro-text .btn-xl {
-        margin-top: 30px; /* Increased spacing for better layout */
-    }
-}
-
-/* Dark Mode */
-@media (prefers-color-scheme: dark) {
-    header {
-        background-color: black;
+        margin-top: 30px; /* Increased spacing */
     }
 }
 
