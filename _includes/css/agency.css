@@ -265,11 +265,11 @@ fieldset[disabled] .btn-xl.active {
     }
 }
 
-header {
+ {
     text-align: center;
     color: #fff;
     background-attachment: scroll;
-    background-image: url('{{ site.baseurl }}/img/header-bg.jpg');
+    background-image: url('{{ site.baseurl }}/img/-bg.jpg');
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
@@ -278,13 +278,13 @@ header {
     -o-background-size: cover;
 }
 
-header .intro-text {
+ .intro-text {
     padding-top: 100px;
     padding-bottom: 50px;
 }
 
-header .intro-text .intro-lead-in {
-    color: #FFD700; /* Replace with your desired color */
+ .intro-text .intro-lead-in {
+    color: #333333; /* Replace with your desired color */
     margin-bottom: 25px;
     font-family: {{ site.data.template.font.secondary }};
     font-size: 22px;
@@ -292,8 +292,8 @@ header .intro-text .intro-lead-in {
     line-height: 22px;
 }
 
-header .intro-text .intro-heading {
-    color: #FFD700; /* Replace with your desired color */
+ .intro-text .intro-heading {
+    color: #333333; /* Replace with your desired color */
     margin-bottom: 25px;
     text-transform: uppercase;
     font-family: {{ site.data.template.font.primary }};
@@ -303,7 +303,7 @@ header .intro-text .intro-heading {
 }
 
 @media(min-width:768px) {
-    header .intro-text {
+     .intro-text {
         padding-top: 300px;
         padding-bottom: 200px;
     }
