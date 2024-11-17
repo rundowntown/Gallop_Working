@@ -271,12 +271,13 @@ header {
     position: relative;
     text-align: center;
     color: #fff;
-    min-height: 100vh; /* Full viewport height */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* Center content horizontally */
+    align-items: center;
     overflow: hidden;
+    background-color: black; /* Fallback background for when video doesn't load */
 }
 
 header .video-bg {
@@ -288,9 +289,9 @@ header .video-bg {
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -1; /* Send video behind content */
+    z-index: -1;
     background-size: cover;
-    filter: brightness(0.7); /* Optional: Adjust brightness for better readability */
+    background-color: black; /* Ensure a visible background */
 }
 
 header .intro-text {
