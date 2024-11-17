@@ -291,22 +291,22 @@ header::before {
     z-index: 1; /* Ensures overlay is behind text */
 }
 
-/* Ensure text appears above the overlay */
+/* Styling for the intro text with the box */
 header .intro-text {
-    position: relative; /* Makes text layer independent */
-    z-index: 2; /* Places text above overlay */
+    position: relative;
+    z-index: 2; /* Places text above the overlay */
     text-align: center;
-    padding: 20px; /* Space inside the box */
     color: #FFD700; /* Gold text for contrast */
+    padding: 20px; /* Space inside the box */
     background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
-    border-radius: 10px; /* Optional rounded corners */
-    display: inline-block; /* Keeps box close to text size */
-    margin: 0 auto; /* Centers the text box */
+    border-radius: 10px; /* Rounded corners */
+    display: inline-block; /* Shrinks box to fit text size */
+    margin: 0 auto; /* Centers the text box horizontally */
 }
 
-/* Styling for the lead-in text */
+/* Styling for lead-in text */
 header .intro-text .intro-lead-in {
-    color: #0015BC; /* Dodger Blue for the lead-in text */
+    color: #0015BC; /* Democratic Blue */
     margin-bottom: 25px;
     font-family: {{ site.data.template.font.secondary }};
     font-size: 22px;
@@ -314,9 +314,9 @@ header .intro-text .intro-lead-in {
     line-height: 22px;
 }
 
-/* Styling for the main heading text */
+/* Styling for heading text */
 header .intro-text .intro-heading {
-    color: #0015BC; /* Gold text for the main heading */
+    color: #FFD700; /* Gold */
     margin-bottom: 25px;
     text-transform: uppercase;
     font-family: {{ site.data.template.font.primary }};
