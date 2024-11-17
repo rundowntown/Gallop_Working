@@ -273,26 +273,22 @@ header {
     background-attachment: scroll;
     background-image: url('{{ site.baseurl }}/img/header-bg.jpg');
     background-position: center center;
-    background-repeat: no-repeat; /* Corrected from 'none' to 'no-repeat' */
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
+    background-repeat: no-repeat;
     background-size: cover;
-    -o-background-size: cover;
+    min-height: 100vh; /* Ensures header covers full viewport height */
+    display: flex;
+    align-items: center; /* Vertically centers .intro-text within header */
 }
 
 header .intro-text {
-    /* Removed excessive vertical padding */
-    padding-top: 50px; /* Adjusted from 100px */
-    padding-bottom: 50px; /* Adjusted from 50px */
-    
-    /* Optional: Horizontal padding to prevent content from touching edges on small screens */
+    padding-top: 100px; /* Increased from 50px */
+    padding-bottom: 100px; /* Increased from 50px */
     padding-left: 20px;
     padding-right: 20px;
-    
-    /* Center the content */
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center; /* Vertically centers content within .intro-text */
 }
 
 header .intro-text .intro-bg-box {
@@ -300,42 +296,51 @@ header .intro-text .intro-bg-box {
     display: inline-block; /* Shrinks the box to fit content */
     padding: 15px 30px; /* Adjust padding for tighter fit */
     border-radius: 8px; /* Optional: Rounded corners */
+    margin-bottom: 20px; /* Space between box and button */
     
-    /* Optional: Add some margin below if needed */
-    margin-bottom: 20px;
+    /* Optional: Gradient Background */
+    /* background: linear-gradient(
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.5)
+    ); */
 }
 
 header .intro-text .intro-lead-in {
-    color: #fff; /* Changed from #333333 for better contrast */
-    margin: 0; /* Removed bottom margin */
+    color: #fff; /* Ensures text is readable against background */
+    margin: 0; /* Removes default margin */
     font-family: {{ site.data.template.font.secondary }};
     font-size: 22px;
     font-style: italic;
-    line-height: 1.5; /* Use relative units for better responsiveness */
+    line-height: 1.5; /* Improves readability */
+    
+    /* Optional: Text Shadow for enhanced readability */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 header .intro-text .intro-heading {
-    color: #fff; /* Changed from #333333 for better contrast */
-    margin: 10px 0; /* Added vertical margin for spacing */
+    color: #fff; /* Ensures text is readable against background */
+    margin: 10px 0; /* Adds vertical spacing */
     text-transform: uppercase;
     font-family: {{ site.data.template.font.primary }};
     font-size: 50px;
     font-weight: 700;
-    line-height: 1.2; /* Use relative units for better responsiveness */
+    line-height: 1.2; /* Improves readability */
+    
+    /* Optional: Text Shadow for enhanced readability */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 /* Button Styles */
 header .intro-text .btn-xl {
-    /* Ensures the button maintains its styling */
-    /* If needed, adjust margins */
-    margin-top: 20px;
+    margin-top: 20px; /* Adds space between text box and button */
+    /* Button retains its existing styles */
 }
 
 /* Responsive Adjustments */
 @media(min-width:768px) {
     header .intro-text {
-        padding-top: 150px; /* Adjust as needed for larger screens */
-        padding-bottom: 150px; /* Adjust as needed for larger screens */
+        padding-top: 150px; /* Increased from 50px */
+        padding-bottom: 150px; /* Increased from 100px */
     }
 
     header .intro-text .intro-bg-box {
@@ -343,19 +348,17 @@ header .intro-text .btn-xl {
     }
 
     header .intro-text .intro-lead-in {
-        font-size: 40px;
-        line-height: 1.5;
+        font-size: 40px; /* Larger text for better visibility */
     }
 
     header .intro-text .intro-heading {
-        font-size: 75px;
-        margin: 15px 0;
-        line-height: 1.2;
+        font-size: 75px; /* Larger text for better visibility */
+        margin: 15px 0; /* Adjusted spacing */
     }
 
     /* Adjust button margin on larger screens */
     header .intro-text .btn-xl {
-        margin-top: 30px;
+        margin-top: 30px; /* Increased spacing */
     }
 }
 
