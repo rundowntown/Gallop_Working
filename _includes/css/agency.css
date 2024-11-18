@@ -918,12 +918,12 @@ body {
 
 /* Services Section Customization */
 #services .timeline-image {
-    width: 100px; /* Slightly larger width */
-    height: 100px; /* Slightly larger height */
+    width: 120px; /* Larger width */
+    height: 120px; /* Larger height */
     margin: 0 auto 20px; /* Center the circle and add spacing below */
     border-radius: 50%; /* Make the shape perfectly circular */
     overflow: hidden; /* Clip any image content outside the circle */
-    border: 5px solid #f7f7f7; /* Optional: Add a border around the circle */
+    border: 6px solid #f7f7f7; /* Optional: Slightly thicker border */
     background-color: #f0f0f0; /* Fallback background color */
     display: flex; /* Center the image inside */
     justify-content: center;
@@ -935,4 +935,10 @@ body {
     height: 100%; /* Make the image fill the container height */
     object-fit: cover; /* Scale the image proportionally to fill the circle */
     border-radius: 50%; /* Ensure the image itself is circular */
+}
+@media (max-width: 768px) {
+    #services .timeline-image {
+        width: 100px; /* Slightly smaller for mobile */
+        height: 100px;
+    }
 }
