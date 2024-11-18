@@ -918,8 +918,8 @@ body {
 
 /* Services Section Customization */
 #services .timeline-image {
-    width: 80px; /* Adjust the width of the circle */
-    height: 80px; /* Adjust the height of the circle */
+    width: 100px; /* Slightly larger width */
+    height: 100px; /* Slightly larger height */
     margin: 0 auto 20px; /* Center the circle and add spacing below */
     border-radius: 50%; /* Make the shape perfectly circular */
     overflow: hidden; /* Clip any image content outside the circle */
