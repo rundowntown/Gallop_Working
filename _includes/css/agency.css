@@ -540,21 +540,25 @@ section h3.section-subheading {
 .timeline>li .timeline-image {
     z-index: 100;
     position: absolute;
-    left: 0;
-    width: 80px;
-    height: 80px;
-    margin-left: 0;
-    border: 7px solid #f1f1f1;
-    border-radius: 100%;
+    left: 50%; /* Centers the circle horizontally */
+    width: 150px; /* Updated size */
+    height: 150px; /* Updated size */
+    margin-left: -75px; /* Half the width to center the circle */
+    border-radius: 50%; /* Makes it circular */
+    overflow: hidden; /* Prevents overflow of images */
+    border: 7px solid #f1f1f1; /* Keeps the border */
     text-align: center;
-    color: #fff;
-    background-color: #{{ site.data.template.color.primary }};
+    background-color: #f7f7f7; /* Optional fallback */
+    display: flex; /* Ensures image is centered */
+    justify-content: center;
+    align-items: center;
 }
 
-.timeline>li .timeline-image h4 {
-    margin-top: 12px;
-    font-size: 10px;
-    line-height: 14px;
+.timeline>li .timeline-image img {
+    width: 100%; /* Ensures image fits the circle width */
+    height: 100%; /* Ensures image fits the circle height */
+    object-fit: cover; /* Ensures proper scaling without distortion */
+    border-radius: 50%; /* Ensures the image itself is circular */
 }
 
 .timeline>li.timeline-inverted>.timeline-panel {
