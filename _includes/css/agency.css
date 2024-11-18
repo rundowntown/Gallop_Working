@@ -541,24 +541,25 @@ section h3.section-subheading {
     z-index: 100;
     position: absolute;
     left: 50%; /* Centers the circle horizontally */
-    width: 150px; /* Updated size */
-    height: 150px; /* Updated size */
+    width: 150px; /* Circle size */
+    height: 150px; /* Circle size */
     margin-left: -75px; /* Half the width to center the circle */
     border-radius: 50%; /* Makes it circular */
-    overflow: hidden; /* Prevents overflow of images */
+    overflow: hidden; /* Prevents overflow of images or videos */
     border: 7px solid #f1f1f1; /* Keeps the border */
     text-align: center;
     background-color: #f7f7f7; /* Optional fallback */
-    display: flex; /* Ensures image is centered */
+    display: flex; /* Centers content */
     justify-content: center;
     align-items: center;
 }
 
-.timeline>li .timeline-image img {
-    width: 100%; /* Ensures image fits the circle width */
-    height: 100%; /* Ensures image fits the circle height */
+.timeline>li .timeline-image img,
+.timeline>li .timeline-image video {
+    width: 100%; /* Ensures content fills the container width */
+    height: 100%; /* Ensures content fills the container height */
     object-fit: cover; /* Ensures proper scaling without distortion */
-    border-radius: 50%; /* Ensures the image itself is circular */
+    border-radius: 50%; /* Ensures the content matches the circle shape */
 }
 
 .timeline>li.timeline-inverted>.timeline-panel {
